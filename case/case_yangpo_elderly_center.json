@@ -1,0 +1,45 @@
+{
+  "case_id": "case_yangpo_elderly_center",
+  "project_name": "陽坡村黨群養老中心",
+  "data_sources": [
+    "GPT Analysis"
+  ],
+  "Gene_A": {
+    "location": "中國貴州省習水縣陽坡村，位處山地村落",
+    "site_conditions": "基地位於自然山坡之間，村落散落於起伏地形，周邊以農田與樹林為主；建築需因應高差與在地聚落肌理",
+    "functional_needs": "提供高齡者日常活動與社區服務功能，包括餐廳、活動空間、黨群服務站等，結合社會與文化角色",
+    "cultural_context": "結合傳統村落建築語彙與當代表現，試圖強化地方認同與公共性，回應農村老齡化與社群需求"
+  },
+  "Gene_B": {
+    "issue": "如何在自然村落中創造具歸屬感與文化連結的養老空間",
+    "concept": "延續『寨』的聚落形式，強調建築與地景融合，打造具有地域文化特色的當代養老空間",
+    "strategy": "建築依山就勢，三棟量體錯落排列，延續原村落的街巷尺度；立面採木構與灰色瓦面對應傳統建築意象；中央廣場與平台強化公共性"
+  },
+  "Gene_C1": [
+    "wood structure",
+    "gray-tile roof",
+    "stepped courtyard",
+    "community dining hall",
+    "multipurpose hall",
+    "shaded terrace",
+    "mountain-view corridor",
+    "public square",
+    "wooden screen"
+  ],
+  "Gene_C2": [
+    "Stepped Courtyard → links (Circulation Relation) → Three Building Volumes",
+    "Mountain-view Corridor → offers (Perceptual Relation) → Framed Landscape",
+    "Public Square → anchors (Functional Relation) → Community Gathering",
+    "Wooden Screen → filters (Environmental Relation) → Sunlight and Wind",
+    "Gray-Tile Roof → references (Conceptual Relation) → Traditional Village Typology",
+    "Terrace → transitions (Spatial Relation) → Indoor and Outdoor Activity Zones",
+    "Dining Hall → connects to (Functional Relation) → Multipurpose Hall and Corridor"
+  ],
+  "Gene_D": {
+    "user_behavior": "村民與長者可自由地於階梯庭院、平台與餐廳空間互動，空間模擬傳統聚落生活節奏，提升社交與社區歸屬感（推測）",
+    "media_feedback": "設計受到好評，特別是對地方文化的回應與木構建築語彙的當代表現",
+    "designer_reflection": "希望透過建築語言重新凝聚村落社群，讓建築成為日常生活的延伸與文化載體"
+  },
+  "notes": "本案充分展現傳統聚落轉譯與社會服務融合之策略，為山地鄉村高齡建築提供深具啟發的模式",
+  "source": "GPT semantic analysis v1.0"
+}
