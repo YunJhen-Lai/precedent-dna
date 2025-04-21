@@ -3,12 +3,17 @@
 <head>
   <meta charset="UTF-8">
   <title>📘 Submit Precedent DNA Cases</title>
+  <style>
+    body { font-family: sans-serif; padding: 20px; }
+    textarea { width: 100%; font-family: monospace; }
+    button { font-size: 16px; padding: 10px 20px; }
+  </style>
 </head>
 <body>
   <h2>📘 一鍵提交多筆案例到 GitHub 知識庫</h2>
 
   <p>請將下列格式貼入，按下按鈕即可送出所有案例：</p>
-  <textarea id="json_input" rows="20" cols="100">[
+  <textarea id="json_input" rows="20">[
   {
     "filename": "case_test_write.json",
     "content": {
@@ -29,20 +34,24 @@
   <br><br>
   <button onclick="submitAll()">📤 Submit All Cases</button>
 
+  <div id="result" style="margin-top: 20px; white-space: pre-wrap;"></div>
+
   <script>
-    function submitAll() {
-      let inputText = document.getElementById("json_input").value;
+    async function submitAll() {
+      const inputText = document.getElementById("json_input").value;
+      const resultDiv = document.getElementById("result");
+      resultDiv.innerText = "⏳ 正在送出，請稍候...\n";
 
       try {
         const cases = JSON.parse(inputText);
 
         if (!Array.isArray(cases)) {
-          alert("請提供一個 JSON 陣列");
+          resultDiv.innerText = "❌ 請提供一個 JSON 陣列";
           return;
         }
 
-        cases.forEach(data => {
-          fetch("https://ac907e17-3c44-4b93-bc13-bbbcc4afb4a5-00-2wk9a5dxu9yqb.pike.replit.dev/push_case", {
+        for (const data of cases) {
+          const response = await fetch("https://ac907e17-3c44-4b93-bc13-bbbcc4afb4a5-00-2wk9a5dxu9yqb.pike.replit.dev/push_case", {
             method: "POST",
             headers: {
               "Content-Type": "application/json"
@@ -52,16 +61,19 @@
               message: "Add " + data.filename,
               content: data.content
             })
-          })
-          .then(response => response.text())
-          .then(text => console.log(`✅ ${data.filename} 回應：` + text))
-          .catch(error => console.error(`❌ ${data.filename} 發送錯誤：`, error));
-        });
+          });
 
-        alert("📨 所有案例已送出，請查看 GitHub Repo！");
+          const text = await response.text();
+          if (response.ok) {
+            resultDiv.innerText += `✅ ${data.filename} 成功送出\n`;
+          } else {
+            resultDiv.innerText += `❌ ${data.filename} 失敗：${text}\n`;
+          }
+        }
+
+        resultDiv.innerText += "\n📁 請前往 GitHub Repo 確認資料是否寫入成功。";
       } catch (e) {
-        alert("⚠️ JSON 格式錯誤，請再次確認輸入");
-        console.error(e);
+        resultDiv.innerText = "⚠️ JSON 格式錯誤，請再次確認輸入\n" + e;
       }
     }
   </script>
