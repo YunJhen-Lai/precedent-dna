@@ -1,0 +1,28 @@
+name: 📘 自動寫入案例 JSON
+
+on:
+  workflow_dispatch:  # 👉 手動啟動（GitHub Actions 可按下 Run）
+
+jobs:
+  update-case:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: 📥 Checkout repository
+        uses: actions/checkout@v3
+
+      - name: 🛠 設定 Git 作者
+        run: |
+          git config --global user.name 'github-actions[bot]'
+          git config --global user.email 'github-actions[bot]@users.noreply.github.com'
+
+      - name: 🧪 執行 Node 腳本，自動寫入 JSON 到 case/
+        run: |
+          mkdir -p case
+          node .github/scripts/write_cases.mjs
+
+      - name: ✅ Commit & Push JSON
+        run: |
+          git add case/
+          git commit -m "🔁 自動寫入案例 JSON"
+          git push
