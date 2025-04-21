@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="UTF-8">
+  <title>Submit Precedent DNA Cases</title>
+</head>
+<body>
+  <h2>📘 一鍵提交案例到 GitHub 知識庫</h2>
+
+  <button onclick="submit_case_01_guangxi_elderly_home()">📤 Submit case_01_guangxi_elderly_home.json</button>
+
+  <script>
+    function submit_case_01_guangxi_elderly_home() {
+      const data = {
+        filename: "case_01_guangxi_elderly_home.json",
+        message: "Add case_01_guangxi_elderly_home",
+        content: {
+  "case_id": "case_01_guangxi_elderly_home",
+  "project_name": "Guangxi Elderly Housing",
+  "data_sources": [
+    "CASE1-preprocess",
+    "\u8a2d\u8a08\u7406\u5ff5\u88dc\u5145\u6587\u5b57"
+  ],
+  "Gene_A": {
+    "location": "\u908a\u7de3\u57ce\u5e02\u5316\u5340\u57df\uff0c\u9130\u8fd1\u81ea\u7136\u4fdd\u8b77\u5340\u8207\u5c11\u91cf\u958b\u767c\u5340",
+    "site_conditions": "\u57fa\u5730\u70ba\u4e18\u9675\u5730\u5f62\uff0c\u9700\u8abf\u548c\u81ea\u7136\u843d\u5dee\u8207\u57ce\u5e02\u8857\u9053\u6a19\u9ad8",
+    "functional_needs": "\u70ba\u6587\u9769\u6642\u671f\u6210\u9577\u7684\u9000\u4f11\u8001\u4eba\u63d0\u4f9b\u5b89\u5fc3\u7167\u8b77\u8207\u591a\u5143\u6d3b\u52d5\u7a7a\u9593",
+    "cultural_context": "\u5f37\u8abf\u56de\u61c9\u516c\u793e\u751f\u6d3b\u8a18\u61b6\uff0c\u91cd\u5efa\u4e16\u4ee3\u6b78\u5c6c\u611f\u8207\u96c6\u9ad4\u571f\u5730\u610f\u8b58"
+  },
+  "Gene_B": {
+    "issue": "\u5982\u4f55\u65bc\u90fd\u5e02\u8207\u81ea\u7136\u908a\u754c\uff0c\u5275\u9020\u5177\u6709\u96c6\u9ad4\u8a18\u61b6\u8207\u6b78\u5c6c\u611f\u7684\u9ad8\u9f61\u7a7a\u9593",
+    "concept": "\u559a\u8d77\u201c\u516c\u793e\u751f\u6d3b\u201d\u8a18\u61b6\u8207\u571f\u5730\u60c5\u611f",
+    "strategy": "\u900f\u904e\u6a13\u677f\u4ea4\u932f\u8207\u5357\u5411\u901a\u5eca\u5275\u9020\u5782\u76f4\u7a7a\u9593\u5c64\u6b21\uff1b\u5f15\u5165\u7a2e\u5b50\u5eab\u8207\u81ea\u7136\u666f\u89c0\u547c\u61c9\u539f\u59cb\u5730\u8c8c"
+  },
+  "Gene_C1": [
+    "concave corridor",
+    "atrium",
+    "activity room",
+    "rooftop terrace",
+    "colored pond",
+    "garden",
+    "gate ball court",
+    "louvers",
+    "vertical core",
+    "wood-aluminum louver system",
+    "seed bank"
+  ],
+  "Gene_C2": [
+    "Concave Corridor \u2192 connects (Circulation Relation) \u2192 Activity Rooms",
+    "Garden \u2192 integrates with (Spatial Relation) \u2192 Dining Hall",
+    "Roof Terrace \u2192 overlooks (Perceptual Relation) \u2192 Urban Green Zone",
+    "Vertical Core \u2192 supports (Functional Relation) \u2192 Symmetrical Circulation",
+    "Wood-Aluminum Louver \u2192 filters (Environmental Relation) \u2192 Sunlight",
+    "Seed Bank \u2192 restores (Conceptual Relation) \u2192 Local Ecological Memory",
+    "Stacked Floors \u2192 bridge (Spatial Relation) \u2192 Terrain Difference",
+    "Reception \u2192 leads to (Circulation Relation) \u2192 Leisure Clusters"
+  ],
+  "Gene_D": {
+    "user_behavior": "\u9ad8\u9f61\u8005\u65bc\u591a\u5c64\u7a7a\u9593\u4e2d\u81ea\u7531\u53c3\u8207\u6d3b\u52d5\u3001\u793e\u4ea4\u8207\u5eb7\u990a\uff1b\u7a7a\u9593\u523a\u6fc0\u4ea4\u6d41\u8207\u53c3\u8207",
+    "media_feedback": "\uff08\u63a8\u6e2c\uff09\u88ab\u8996\u70ba\u5177\u6587\u5316\u6df1\u5ea6\u8207\u751f\u614b\u56de\u61c9\u7684\u793a\u7bc4\u6848\u4f8b",
+    "designer_reflection": "\u4f01\u5716\u85c9\u7531\u7a7a\u9593\u8a9e\u8a00\u91cd\u5efa\u4e16\u4ee3\u9023\u7d50\u8207\u81ea\u7136\u60c5\u611f"
+  },
+  "notes": "",
+  "source": "GPT semantic analysis v1.0"
+}
+      };
+      fetch("https://precedent-dna-webhook.yunjen20030303.repl.co/push_case", {
+        method: "POST",
+        headers: {
+          "Content-Type": "application/json"
+        },
+        body: JSON.stringify(data)
+      }).then(r => r.text()).then(alert).catch(alert);
+    }
+  </script>
+</body>
+</html>
