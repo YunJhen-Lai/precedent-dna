@@ -1,4 +1,4 @@
-<!DOCTYPE html>
+<!DOCTYPE html> 
 <html>
 <head>
   <meta charset="UTF-8">
@@ -10,10 +10,10 @@
   <p>請將下列格式貼入，按下按鈕即可送出所有案例：</p>
   <textarea id="json_input" rows="20" cols="100">[
   {
-    "filename": ".json",
+    "filename": "case_test_write.json",
     "content": {
-      "case_id": "",
-      "project_name": "",
+      "case_id": "case_test_write",
+      "project_name": "Webhook 測試案例",
       "data_sources": ["GPT Analysis"],
       "Gene_A": {},
       "Gene_B": {},
@@ -43,7 +43,6 @@
 
         cases.forEach(data => {
           fetch("https://ac907e17-3c44-4b93-bc13-bbbcc4afb4a5-00-2wk9a5dxu9yqb.pike.replit.dev/push_case", {
-                , {
             method: "POST",
             headers: {
               "Content-Type": "application/json"
