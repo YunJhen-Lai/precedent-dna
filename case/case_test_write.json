@@ -1,0 +1,14 @@
+{
+  "case_id": "case_test_write",
+  "project_name": "Webhook 測試案例",
+  "data_sources": [
+    "GPT Analysis"
+  ],
+  "Gene_A": {},
+  "Gene_B": {},
+  "Gene_C1": [],
+  "Gene_C2": [],
+  "Gene_D": {},
+  "notes": "",
+  "source": "GPT semantic analysis v1.0"
+}
