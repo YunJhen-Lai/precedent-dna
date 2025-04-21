@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <title>Submit Precedent DNA Cases</title>
+  <style>
+    body {
+      font-family: sans-serif;
+      margin: 40px;
+    }
+    h1 {
+      color: #003366;
+    }
+    button {
+      margin: 6px 0;
+      padding: 8px 12px;
+      background-color: #f0f8ff;
+      border: 1px solid #ccc;
+      border-radius: 4px;
+      cursor: pointer;
+    }
+  </style>
+</head>
+<body>
+  <h1>📘 Submit Precedent DNA Cases to GitHub</h1>
+
+  <div id="case-buttons"></div>
+
+  <script>
+    const endpoint = "https://precedent-dna-webhook.yunjen20030303.repl.co/push_case";
+
+    const cases = [
+      {
+        filename: "case_01_guangxi_elderly_home.json",
+        content: {/* JSON 內容放這裡 */}
+      },
+      {
+        filename: "case_02_retirement_home_wilder_kaiser.json",
+        content: {/* 第二筆 JSON */}
+      }
+      // 你可以持續加入更多 case...
+    ];
+
+    const container = document.getElementById("case-buttons");
+
+    cases.forEach(({ filename, content }) => {
+      const btn = document.createElement("button");
+      btn.textContent = `Submit ${filename}`;
+      btn.onclick = async () => {
+        try {
+          const response = await fetch(endpoint, {
+            method: "POST",
+            headers: {
+              "Content-Type": "application/json"
+            },
+            body: JSON.stringify({
+              filename,
+              message: `Add ${filename}`,
+              content
+            })
+          });
+          const text = await response.text();
+          alert(`✅ ${filename} uploaded!\n\nServer response:\n${text}`);
+        } catch (err) {
+          alert(`❌ 發生錯誤：${err}`);
+        }
+      };
+      container.appendChild(btn);
+    });
+  </script>
+</body>
+</html>
+
