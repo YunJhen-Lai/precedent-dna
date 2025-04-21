@@ -1,0 +1,49 @@
+{
+  "case_id": "case_guangxi_elderly_home",
+  "project_name": "Guangxi Elderly Housing",
+  "data_sources": [
+    "CASE1-preprocess",
+    "設計理念補充文字"
+  ],
+  "Gene_A": {
+    "location": "邊緣城市化區域，鄰近自然保護區與少量開發區",
+    "site_conditions": "基地為丘陵地形，需調和自然落差與城市街道標高",
+    "functional_needs": "為文革時期成長的退休老人提供安心照護與多元活動空間",
+    "cultural_context": "強調回應公社生活記憶，重建世代歸屬感與集體土地意識"
+  },
+  "Gene_B": {
+    "issue": "如何於都市與自然邊界，創造具有集體記憶與歸屬感的高齡空間",
+    "concept": "喚起“公社生活”記憶與土地情感",
+    "strategy": "透過樓板交錯與南向通廊創造垂直空間層次；引入種子庫與自然景觀呼應原始地貌"
+  },
+  "Gene_C1": [
+    "concave corridor",
+    "atrium",
+    "activity room",
+    "rooftop terrace",
+    "colored pond",
+    "garden",
+    "gate ball court",
+    "louvers",
+    "vertical core",
+    "wood-aluminum louver system",
+    "seed bank"
+  ],
+  "Gene_C2": [
+    "Concave Corridor → connects (Circulation Relation) → Activity Rooms",
+    "Garden → integrates with (Spatial Relation) → Dining Hall",
+    "Roof Terrace → overlooks (Perceptual Relation) → Urban Green Zone",
+    "Vertical Core → supports (Functional Relation) → Symmetrical Circulation",
+    "Wood-Aluminum Louver → filters (Environmental Relation) → Sunlight",
+    "Seed Bank → restores (Conceptual Relation) → Local Ecological Memory",
+    "Stacked Floors → bridge (Spatial Relation) → Terrain Difference",
+    "Reception → leads to (Circulation Relation) → Leisure Clusters"
+  ],
+  "Gene_D": {
+    "user_behavior": "高齡者於多層空間中自由參與活動、社交與康養；空間刺激交流與參與",
+    "media_feedback": "（推測）被視為具文化深度與生態回應的示範案例",
+    "designer_reflection": "企圖藉由空間語言重建世代連結與自然情感"
+  },
+  "notes": "",
+  "source": "GPT semantic analysis v1.0"
+}
